@@ -36,6 +36,46 @@
 
 9.End the program.
 
+## Task 2: Electricity Bill
+
+### (a) Inputs and Outputs
+
+**Input:**
+
+
+- Electricity units used in a month (kWh, a whole number)
+
+
+**Outputs:**
+
+- Energy charge (2 decimal places)
+
+- Service charge — fixed 10.00 birr
+
+- Total bill (2 decimal places)
+
+### (b) Process
+
+1. Start the program.
+
+2. Declare the rates: first rate 1.50, second rate 2.00, first limit 50, and the service charge 10.00.
+
+3. Ask the user to enter the electricity units used and read the units.
+
+4. Use the conditional operator: if the units are 50 or less, energy charge = units x 1.50.
+
+5. Otherwise, energy charge = 50 x 1.50 + (units - 50) x 2.00.
+
+6. Calculate the total bill = energy charge + service charge.
+
+7. Print the energy charge, the service charge, and the total bill with 2 decimal places.
+
+8. End the program.
+
+
+
+
+
 
 ## Task 3: Trip Speed and Fuel Cost
 
