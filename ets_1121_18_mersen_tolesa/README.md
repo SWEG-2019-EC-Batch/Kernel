@@ -18,20 +18,18 @@
 
 ## (b) Process 
 
-1.start the program
 
-2.Declare variables for assignment, midterm, final exam, and total.
+1.Declare variables for assignment, midterm, final exam, and total.
 
-3.Ask the user to enter the assignment mark and read it.
+2.Ask the user to enter the assignment mark and read it.
 
-4.Ask the user to enter the midterm mark and read it.
+3.Ask the user to enter the midterm mark and read it.
 
-5.Ask the user to enter the final exam mark and read it.
+4.Ask the user to enter the final exam mark and read it.
 
-6.Calculate the total: total = (assignment x 0.20) + (midterm x 0.30) + (final x 0.50)
+5.Calculate the total: total = (assignment x 0.20) + (midterm x 0.30) + (final x 0.50)
 
-7.Use the conditional operator to choose Pass ? total >= 50:Fail.
+6.Use the conditional operator to choose Pass ? total >= 50:Fail.
 
-8.Print the total with 1 decimal place, and print Pass or Fail.
+7.Print the total with 1 decimal place, and print Pass or Fail.
 
-9.End the program.
