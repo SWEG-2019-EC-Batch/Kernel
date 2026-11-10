@@ -36,6 +36,60 @@
 
 9.End the program.
 
+### (c) Design the program
+
+** Variables: what and how?**
+
+Variable	Type	Why this type
+
+assignment	double	Marks can have decimals.
+
+midterm	double	Marks can have decimals.
+
+finalExam	double	Marks can have decimals.
+
+total	double	The weighted result has decimals.
+
+**constants**
+
+const double ASSIGNMENT_WEIGHT = 0.20;
+
+const double MIDTERM_WEIGHT = 0.30;
+
+const double FINAL_WEIGHT = 0.50;
+
+const double PASS_MARK = 50.0;
+
+**reading the input**
+
+cout << "Enter assignment mark (out of 100): ";
+
+cin >> assignment;
+
+cout << "Enter midterm mark (out of 100): ";
+
+cin >> midterm;
+
+cout << "Enter final exam mark (out of 100): ";
+
+cin >> finalExam;
+
+**calculation**
+
+total = (assignment * ASSIGNMENT_WEIGHT) + (midterm * MIDTERM_WEIGHT) + (finalExam * FINAL_WEIGHT);
+
+**printing the result**
+
+cout << fixed << setprecision(1);
+
+cout << "Total: " << total << endl;
+
+cout << "Result: " << ((total >= PASS_MARK) ? "Pass" : "Fail") << endl;
+
+
+
+
+
 ## Task 2: Electricity Bill
 
 ### (a) Inputs and Outputs
@@ -71,6 +125,56 @@
 7. Print the energy charge, the service charge, and the total bill with 2 decimal places.
 
 8. End the program.
+
+
+#### Design the program
+
+ **Variables: what and how?**
+
+Variable	Type	Why this type
+
+units	int	Electricity units are whole numbers.
+
+energyCharge	double	Money results have decimals.
+
+totalBill	double	Money results have decimals.
+
+**constants**
+
+const double FIRST_RATE = 1.50;
+
+const double SECOND_RATE = 2.00;
+
+const double SERVICE_CHARGE = 10.00;
+
+const int FIRST_LIMIT = 50;
+
+**reding the inputs**
+
+cout << "Enter electricity units used (kWh): ";
+
+cin >> units;
+
+**calculation**
+
+energyCharge = (units <= FIRST_LIMIT) ? (units * FIRST_RATE)
+               : ((FIRST_LIMIT * FIRST_RATE) + ((units - FIRST_LIMIT) * SECOND_RATE));
+
+totalBill    = energyCharge + SERVICE_CHARGE;
+
+**printing the result**
+
+cout << fixed << setprecision(2);
+
+cout << "Energy charge: " << energyCharge << " birr" << endl;
+
+cout << "Service charge: " << SERVICE_CHARGE << " birr" << endl;
+
+cout << "Total bill: " << totalBill << " birr" << endl;
+
+
+
+
 
 
 
@@ -122,6 +226,68 @@
 9. Calculate the fuel cost: fuel cost = fuel used x price per liter.
 
 10. Print the average speed, the fuel used, and the fuel cost, each with 2 decimal places.
+
+
+#### Design the program
+
+**Variables: what and how?**
+
+Variable	Type	Why this type
+
+distance	double	Distance in km can have decimals.
+
+hours, minutes	int	Time is entered as whole hours and whole minutes.
+
+fuelUsePer100Km	double	Fuel use can have decimals, like 7.5.
+
+pricePerLiter	double	Prices have decimals.
+
+totalTime, averageSpeed, fuelUsed, fuelCost	double	Calculated results have decimals.
+ 
+
+there is no constant here
+
+**reading the input**
+
+cout << "Enter distance of the trip (km): ";
+
+cin >> distance;
+
+cout << "Enter travel time (hours and minutes): ";
+
+cin >> hours >> minutes;
+
+cout << "Enter fuel use (liters per 100 km): ";
+
+cin >> fuelUsePer100Km;
+
+cout << "Enter price per liter (birr): ";
+
+cin >> pricePerLiter;
+
+**calculation**
+
+totalTime    = hours + (static_cast<double>(minutes) / 60);
+
+averageSpeed = distance / totalTime;
+
+fuelUsed     = (distance / 100) * fuelUsePer100Km;
+
+fuelCost     = fuelUsed * pricePerLiter;
+
+**printing the result**
+
+cout << fixed << setprecision(2);
+
+cout << "Average speed: " << averageSpeed << " km/h" << endl;
+
+cout << "Fuel used: " << fuelUsed << " liters" << endl;
+
+cout << "Fuel cost: " << fuelCost << " birr" << endl;
+
+
+
+
 
 
 
