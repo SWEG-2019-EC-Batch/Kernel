@@ -20,9 +20,7 @@ int main() {
     cin >> assignment >> midterm >> finalMark;
 
     // Calculate total
-    total = (assignment * ASSIGN_WEIGHT)
-          + (midterm * MID_WEIGHT)
-          + (finalMark * FINAL_WEIGHT);
+    total = (assignment * ASSIGN_WEIGHT) + (midterm * MID_WEIGHT) + (finalMark * FINAL_WEIGHT);
 
     // Decide Pass or Fail
     result = (total >= PASS_MARK) ? "Pass" : "Fail";
