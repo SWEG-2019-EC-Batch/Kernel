@@ -62,3 +62,14 @@ cout << fixed << setprecision(2);
 cout << "Energy charge: " << energyCharge << endl;
 cout << "Service charge: " << serviceCharge << endl;
 cout << "Total bill: " << totalBill << endl;
+
+TASK 3: TRIP_SPEED_and_FUEL_COST
+
+//Variable declaration
+
+int hours,minutes
+double distance, fuelRate, pricePerLiter, totalHours, speed, fuelUsed, fuelCost 
+
+// Constant definition
+
+
