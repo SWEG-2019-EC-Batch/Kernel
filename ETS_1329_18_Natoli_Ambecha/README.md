@@ -65,11 +65,17 @@ cout << "Total bill: " << totalBill << endl;
 
 TASK 3: TRIP_SPEED_and_FUEL_COST
 
-//Variable declaration
+//Variable and constant declaration
 
 int hours,minutes
 double distance, fuelRate, pricePerLiter, totalHours, speed, fuelUsed, fuelCost 
 
-// Constant definition
+// Reading the input
+
+cout << "Enter distance, hours, minutes, fuel rate and price per liter separated by space: ";
+cin >> distance >> hours >> minutes >> fuelRate >> pricePerLiter;
+
+// Calculation
+
 
 
