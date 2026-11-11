@@ -94,7 +94,7 @@ flowchart TD
     A([Start]) --> B[Declare assignment, midterm, final exam and total]
     B --> C[/Read assignment, midterm and final exam marks/]
     C --> D["Calculate total = assignment x 0.20 + midterm x 0.30 + final x 0.50"]
-    D --> E{Is total >= 50?}
+    D --> E{"Is total >= 50?"}
     E -->|Yes| F[/Print total and Pass/]
     E -->|No| G[/Print total and Fail/]
     F --> H([Stop])
@@ -201,7 +201,7 @@ cout << "Total bill: " << totalBill << " birr" << endl;
 ```mermaid
 flowchart TD
     A([Start]) --> B[/Read units/]
-    B --> C{Is units <= 50?}
+    B --> C{"Is units <= 50?"}
     C -->|Yes| D["Energy charge = units x 1.50"]
     C -->|No| E["Energy charge = 50 x 1.50 + (units - 50) x 2.00"]
     D --> F["Total bill = energy charge + 10"]
