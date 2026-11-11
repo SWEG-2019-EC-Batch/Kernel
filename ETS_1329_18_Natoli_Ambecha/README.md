@@ -77,5 +77,13 @@ cin >> distance >> hours >> minutes >> fuelRate >> pricePerLiter;
 
 // Calculation
 
+totalHours= hours + minutes/60
+averageSpeed = distance / totalHours
+fuelUsed= distance 
+fuelCost= fuelUsed * pricePerLiter
+
+// Printing the results
+
+
 
 
