@@ -72,18 +72,21 @@ double distance, fuelRate, pricePerLiter, totalHours, speed, fuelUsed, fuelCost
 
 // Reading the input
 
-cout << "Enter distance, hours, minutes, fuel rate and price per liter separated by space: ";
+cout << "Enter distance, travel time (hours), travel time(minutes) , fuel rate (liters per 100km) and price per liter separated by space: ";
 cin >> distance >> hours >> minutes >> fuelRate >> pricePerLiter;
 
 // Calculation
 
-totalHours= hours + minutes/60
-averageSpeed = distance / totalHours
-fuelUsed= distance 
-fuelCost= fuelUsed * pricePerLiter
+totalHours= hours + minutes/60;
+averageSpeed = distance / totalHours;
+fuelUsed= (distance * fuleRate) / 100;
+fuelCost= fuelUsed * pricePerLiter;
 
 // Printing the results
 
-
+cout << fixed << setprecision(2);
+cout << "Average speed: " << speed << " km/h" << endl;
+cout << "Fuel used: " << fuelUsed << " liters" << endl;
+cout << "Fuel cost: " << fuelCost << " birr" << endl;
 
 
