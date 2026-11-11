@@ -87,6 +87,27 @@ cout << "Total: " << total << endl;
 cout << "Result: " << ((total >= PASS_MARK) ? "Pass" : "Fail") << endl;
 
 
+### Flowchart
+
+```mermaid
+flowchart TD
+    A([Start]) --> B[Declare assignment, midterm, final exam and total]
+    B --> C[/Read assignment, midterm and final exam marks/]
+    C --> D["Calculate total = assignment x 0.20 + midterm x 0.30 + final x 0.50"]
+    D --> E{Is total >= 50?}
+    E -->|Yes| F[/Print total and Pass/]
+    E -->|No| G[/Print total and Fail/]
+    F --> H([Stop])
+    G --> H
+```
+
+### Test Example
+
+Input: assignment 80, midterm 70, final exam 90
+
+Output: Total: 82.0, Result: Pass
+
+
 
 
 
@@ -175,6 +196,29 @@ cout << "Total bill: " << totalBill << " birr" << endl;
 
 
 
+### Flowchart
+
+```mermaid
+flowchart TD
+    A([Start]) --> B[/Read units/]
+    B --> C{Is units <= 50?}
+    C -->|Yes| D["Energy charge = units x 1.50"]
+    C -->|No| E["Energy charge = 50 x 1.50 + (units - 50) x 2.00"]
+    D --> F["Total bill = energy charge + 10"]
+    E --> F
+    F --> G[/Print energy charge, service charge and total bill/]
+    G --> H([Stop])
+```
+
+### Test Examples
+
+Test 1 — Input: 80 units
+
+Output: Energy Charge: 135.00 birr, Service Charge: 10.00 birr, Total Bill: 145.00 birr
+
+Test 2 — Input: 30 units
+
+Output: Energy Charge: 45.00 birr, Service Charge: 10.00 birr, Total Bill: 55.00 birr
 
 
 
@@ -284,6 +328,30 @@ cout << "Average speed: " << averageSpeed << " km/h" << endl;
 cout << "Fuel used: " << fuelUsed << " liters" << endl;
 
 cout << "Fuel cost: " << fuelCost << " birr" << endl;
+
+
+
+### Flowchart
+
+```mermaid
+flowchart TD
+    A([Start]) --> B[/Read distance/]
+    B --> C[/Read hours and minutes/]
+    C --> D[/Read fuel use per 100 km and price per liter/]
+    D --> E["Total time = hours + minutes / 60"]
+    E --> F["Average speed = distance / total time"]
+    F --> G["Fuel used = distance / 100 x fuel use per 100 km"]
+    G --> H["Fuel cost = fuel used x price per liter"]
+    H --> I[/Print average speed, fuel used and fuel cost/]
+    I --> J([Stop])
+```
+
+### Test Example
+
+Input: distance 300 km, time 2 hours 30 minutes, fuel use 8 liters per 100 km, price 100 birr per liter
+
+Output: Average speed: 120.00 km/h, Fuel used: 24.00 liters, Fuel cost: 2400.00 birr
+
 
 
 
