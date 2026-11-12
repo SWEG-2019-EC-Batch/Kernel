@@ -1,4 +1,4 @@
-'''
+```mermaid
 flowchart TD
     A([Start]) --> B[/Input electricity units/]
     B --> C{Are units <= 50?}
