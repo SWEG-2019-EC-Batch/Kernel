@@ -3,44 +3,37 @@ using namespace std;
 
 int main()
 {
-    double gross_salary = 0.0;
-    double bonus_payment = 0.0;
-    double tax_deduction = 0.0;
-    double net_salary = 0.0;
-    double tax_rate = 0.0;
-    double pension = 0.0;
-    double penalty = 0.0;
+    double base_salary, gross_salary, bonus_payment, tax_rate ,net_salary, pension, penalty;
     double const pension_rate = 0.07;
-    int expected_hr = 40;
+    int WORK_HR = 40;
     int choose;
 
     cout << "Enter your base salary: " << endl;
     cin >> base_salary;
-    cout << "Enter the number of hours worked in a week: " << endl;
+    cout << "Enter hours worked in a week: " << endl;
     cin >> worked_hr;
-    cout << "Enter the bonus rate: " << endl;
+    cout << "Enter bonus rate: " << endl;
     cin >> bonus_rate;
 
-    cout << "Choose which you want to see:" << endl
-         <<
-
-        "1 for all" << endl
-         << "2 for gross payment" << endl
-         << "3 for pension" << endl
-         << "4 for bonus payment" << endl
-         << "5 for tax deduction" << endl
-         << "6 for penalty" << endl
-         << "7 for net salary" << endl;
+    cout << "Choose which you want to see:" << endl;
+         <<"1 for all" << endl;
+         << "2 for base salary" << endl;
+         << "3 for gross payment" << endl;
+         << "4 for pension" << endl;
+         << "5 for bonus payment" << endl;
+         << "6 for tax " << endl;
+         << "7 for penalty" << endl;
+         << "8 for net salary" << endl;
 
     cin >> choose;
 
-    if (worked_hr > expected_hr)
+    if (WORK_HR > 40)
     {
-        bonus_payment = (worked_hr - expected_hr) * bonus_rate;
+        bonus_payment = (WORK_HR - 40) * bonus_rate;
     }
-    else if (worked_hr < expected_hr)
+    else if (WORK_HR < 40)
     {
-        penalty = (expected_hr - worked_hr) * base_salary / expected_hr;
+        penalty = (40 - WORK_HR) * base_salary / 40;
     }
     else
     {
@@ -75,15 +68,16 @@ int main()
         tax_rate = 0.3;
     }
    
-    tax_deduction = gross_salary * tax_rate;
+    tax = gross_salary * tax_rate;
     pension = gross_salary * pension_rate;
-    net_salary = gross_salary - pension - tax_deduction;
+    net_salary = gross_salary - pension - tax;
 
     switch (choose)
     {
 
     case 1:
         cout << "Penalty: " << penalty << endl;
+        cout << "Base salary: " << base_salary << endl;
         cout << "Gross salary: " << gross_salary << endl;
         cout << "Bonus Payment: " << bonus_payment << endl;
         cout << "Tax Deduction: " << tax_deduction << endl;
@@ -91,33 +85,36 @@ int main()
         cout << "Net salary: " << net_salary << endl;
 
         break;
-       
     case 2:
-        cout << "Gross Salary: " << gross_salary << std::endl;
-        break;
-
+        cout << "Base salary: " << base_salary << endl;
+        
     case 3:
-        cout << "Pension: " << pension << std::endl;
+        cout << "Gross Salary: " << gross_salary << endl;
         break;
 
     case 4:
-        cout << "Bonus Payment: " << bonus_payment << std::endl;
+        cout << "Pension: " << pension << endl;
         break;
 
     case 5:
-        cout << "Tax Deduction: " << tax_deduction << endl;
+        cout << "Bonus Payment: " << bonus_payment << endl;
         break;
 
     case 6:
-        cout << "Penalty: " << penalty << endl;
+        cout << "Tax Deduction: " << tax_deduction << endl;
         break;
 
     case 7:
+        cout << "Penalty: " << penalty << endl;
+        break;
+
+    case 8:
         cout << "Net Salary: " << net_salary << endl;
         break;
 
     default:
         cout << "Penalty: " << penalty << endl;
+        cout << "Base salary: " << base_salary << endl;
         cout << "Gross salary: " << gross_salary << endl;
         cout << "Bonus Payment: " << bonus_payment << endl;
         cout << "Tax Deduction: " << tax_deduction << endl;
