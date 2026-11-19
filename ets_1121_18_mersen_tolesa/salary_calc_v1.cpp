@@ -1,107 +1,116 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main() {
-    double baseSalary, hoursWorked, bonusRate;
-    double bonus = 0, penalty = 0;
-    double grossSalary, pension, tax, netSalary;
     int choice;
+    float base_salary, worked_hours, bonus_rate;
+    float bonus_payment = 0, penalty = 0;
+    float gross_salary, tax = 0, pension, net_salary;
 
+    // Get employee information
     cout << "Enter base salary: ";
-    cin >> baseSalary;
+    cin >> base_salary;
 
     cout << "Enter hours worked: ";
-    cin >> hoursWorked;
+    cin >> worked_hours;
 
-    cout << "Enter bonus rate per overtime hour: ";
-    cin >> bonusRate;
+    cout << "Enter bonus rate: ";
+    cin >> bonus_rate;
 
-    // Calculate bonus
-    if (hoursWorked > 40) {
-        bonus = (hoursWorked - 40) * bonusRate;
+    // Calculate bonus or penalty
+    if (worked_hours > 40) {
+        bonus_payment = (worked_hours - 40) * bonus_rate;
     }
-
-    // Calculate penalty
-    if (hoursWorked < 40) {
-        penalty = (40 - hoursWorked) * baseSalary / 40;
+    else if (worked_hours < 40) {
+        penalty = (40 - worked_hours) * base_salary / 40;
+    }
+    else {
+        bonus_payment = 0;
+        penalty = 0;
     }
 
     // Calculate gross salary
-    grossSalary = baseSalary + bonus - penalty;
+    gross_salary = base_salary + bonus_payment;
 
-    // Calculate pension
-    pension = grossSalary * 0.07;
-
-    // Calculate tax
-    if (grossSalary > 0 && grossSalary < 3500) {
+    // Calculate tax deduction
+    if (gross_salary > 0 && gross_salary <= 3500) {
         tax = 0;
     }
-    else if (grossSalary <= 10000) {
-        tax = grossSalary * 0.10;
+    else if (gross_salary > 3500 && gross_salary <= 10000) {
+        tax = gross_salary * 0.10;
     }
-    else if (grossSalary <= 25000) {
-        tax = grossSalary * 0.15;
+    else if (gross_salary > 10000 && gross_salary <= 20000) {
+        tax = gross_salary * 0.15;
     }
-    else if (grossSalary <= 50000) {
-        tax = grossSalary * 0.20;
+    else if (gross_salary > 20000 && gross_salary <= 50000) {
+        tax = gross_salary * 0.20;
     }
-    else if (grossSalary <= 100000) {
-        tax = grossSalary * 0.25;
+    else if (gross_salary > 50000 && gross_salary <= 100000) {
+        tax = gross_salary * 0.25;
+    }
+    else if (gross_salary > 100000) {
+        tax = gross_salary * 0.30;
     }
     else {
-        tax = grossSalary * 0.30;
+        tax = 0;
     }
 
+    // Calculate pension
+    pension = gross_salary * 0.07;
+
     // Calculate net salary
-    netSalary = grossSalary - pension - tax;
+    net_salary = gross_salary - tax - pension - penalty;
 
     // Display menu
-    cout<<"SALARY INFORMATION MENU"<< endl;
-    cout << "1. Bonus Payment" << endl;
-    cout << "2. Gross Salary" << endl;
-    cout << "3. Pension" << endl;
-    cout << "4. Tax" << endl;
+    cout << "\n----- SALARY MENU -----" << endl;
+    cout << "1. Gross Salary" << endl;
+    cout << "2. Tax Deduction" << endl;
+    cout << "3. Pension Deduction" << endl;
+    cout << "4. Penalty" << endl;
     cout << "5. Net Salary" << endl;
-    cout << "6. Display All Information" << endl;
+    cout << "6. Display All Details" << endl;
 
-    cout << "\nEnter your choice (1-6): ";
+    cout << "\nEnter your choice: ";
     cin >> choice;
 
-    // Switch statement
-    switch (choice) {
+    // Display selected information using switch
+    cout << fixed << setprecision(2);
 
+    switch (choice) {
         case 1:
-            cout << "Bonus Payment: " << bonus << endl;
+            cout << "Gross Salary: " << gross_salary << endl;
             break;
 
         case 2:
-            cout << "Gross Salary: " << grossSalary << endl;
+            cout << "Tax Deduction: " << tax << endl;
             break;
 
         case 3:
-            cout << "Pension (7%): " << pension << endl;
+            cout << "Pension Deduction: " << pension << endl;
             break;
 
         case 4:
-            cout << "Tax: " << tax << endl;
+            cout << "Penalty: " << penalty << endl;
             break;
 
         case 5:
-            cout << "Net Salary: " << netSalary << endl;
+            cout << "Net Salary: " << net_salary << endl;
             break;
 
         case 6:
-            cout << "\nBonus Payment: " << bonus << endl;
+            cout << "\n----- SALARY DETAILS -----" << endl;
+            cout << "Base Salary: " << base_salary << endl;
+            cout << "Bonus Payment: " << bonus_payment << endl;
             cout << "Penalty: " << penalty << endl;
-            cout << "Gross Salary: " << grossSalary << endl;
-            cout << "Pension (7%): " << pension << endl;
-            cout << "Tax: " << tax << endl;
-            cout << "Net Salary: " << netSalary << endl;
+            cout << "Gross Salary: " << gross_salary << endl;
+            cout << "Tax Deduction: " << tax << endl;
+            cout << "Pension: " << pension << endl;
+            cout << "Net Salary: " << net_salary << endl;
             break;
 
         default:
-            cout << "Invalid choice! Please select between 1 and 6." << endl;
+            cout << "Invalid choice!" << endl;
     }
-
-    return 0;
+  return 0;
 }
