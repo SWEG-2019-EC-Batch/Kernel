@@ -113,13 +113,8 @@ int main()
         break;
 
     default:
-        cout << "Penalty: " << penalty << endl;
-        cout << "Base salary: " << base_salary << endl;
-        cout << "Gross salary: " << gross_salary << endl;
-        cout << "Bonus Payment: " << bonus_payment << endl;
-        cout << "Tax Deduction: " << tax_deduction << endl;
-        cout << "Pension: " << pension << endl;
-        cout << "Net salary: " << net_salary << endl;
+        cout << "Invalid choice" << endl;
+        
         break;
     }
 
