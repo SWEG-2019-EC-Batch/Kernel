@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-    int choice;
+    int  choice;
 
     cout << "ROUTE SELECTION" << endl;
     cout << "1. Addis Ababa to Jimma" << endl;
